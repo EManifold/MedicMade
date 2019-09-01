@@ -1,0 +1,30 @@
+	<% include ../partials/header %>
+
+<link rel="stylesheet" href="/stylesheets/newQuestion.css">
+
+
+<div class="container">
+		
+	
+
+	<form action="/forum" method="POST">
+		<div id="header" class="form-group">
+			<h3>
+				What can we help you with?
+			</h3>
+		</div>
+		<div class="form-group">
+			<input class="form-control" type="text" name="issue" placeholder="Your question title">	
+		</div>
+		<div>
+    		<textarea id="description" class="form-control" type="text" name="description" placeholder="Expand on the issue here"></textarea>
+		</div>
+		<button class="btn btn-lg btn-default btn-block btn-info">
+			Submit
+		</button>
+		<a id="goBack" href="/forum">Go Back</a>
+	</form>
+</div>
+
+
+	<% include ../partials/footer %>

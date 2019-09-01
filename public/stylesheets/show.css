@@ -1,0 +1,52 @@
+.box {
+	margin-top: 25px;
+	padding: 10px 10px;
+	background: #f5f5f5;
+	color: #2B3942;
+	border: solid #f0f0f0 3px;
+	box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+h4 {
+	font-weight: 600;
+}
+
+#submitComment {
+	display: inline;
+}
+
+
+#delete-form {
+	display: inline;
+}
+
+#editButton {
+	background-color: #BCD3DD;
+}
+
+#deleteButton {
+	background-color: #ba3045;
+	color: white;
+}
+
+#commentSection {
+	background: white;
+}
+
+
+.leftInfo {
+	margin-left: 15px;
+	margin-top: 5px;
+}
+
+.rightInfo {
+	margin-left: 70px;
+	width: 100px;
+}
+
+.btn-info {
+		color: #FBFCFF;
+	background-color: #61afb8;
+	box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.4);
+	margin: 2px 2px;
+}

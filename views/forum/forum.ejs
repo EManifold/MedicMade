@@ -1,0 +1,61 @@
+	<% include ../partials/header %>
+
+
+<link rel="stylesheet" href="/stylesheets/forum.css">
+
+	
+    <section id="header" class="jumbotron text-center">
+		<div id="newQuestion">
+			<h1 class="display-5">
+				Need some help?
+			</h1>
+			<div>
+				<a href="forum/new" id="askNewQuestion" class="btn btn-info">Ask a question</a>
+			</div>
+		</div>
+	</section>
+
+<div class="container">
+
+	<div id="searchBar" class="input-group mb-3 col-md-5">
+  		<input type="text" class="form-control" placeholder="Search Medic Made..."  aria-describedby="basic-addon2">
+   	<div class="input-group-append">
+   		<button>
+		 		Search
+			</button>
+  		</div>
+	</div>
+
+</div>
+
+	<div class="row ">
+
+		<% for(let i = questions.length - 1; i >= 0; i--) { %>
+			<div class="container rounded col-md-10 boxes">
+				<div class="d-flex justify-content-between">		
+					<div class="leftInfo">	
+						<h4>
+							<%= questions[i].issue %>
+						</h4>
+						<div class="description">
+							<%= questions[i].description %>
+						</div>
+						<hr>
+						<div>
+							<a class="btn btn-info" href="/forum/<%= questions[i]._id%>">Read more</a>
+						</div>
+					</div>
+					
+					<div class="rightInfo">
+						<div>
+							<%= questions[i].author.username %>
+						</div>
+						<div>
+							10 days
+						</div>
+					</div>
+				</div>
+			</div>
+		<% } %>
+	</div>
+	<% include ../partials/footer %>

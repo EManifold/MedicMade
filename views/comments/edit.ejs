@@ -1,0 +1,27 @@
+<% include ../partials/header %>
+
+<link rel="stylesheet" href="/stylesheets/edit.css">
+
+<div class="container">
+	
+	
+	<form action="/forum/<%= question_id %>/comments/<%= comment._id %>?_method=PUT" method="POST">
+		<div id="header" class="form-group">
+			<h3>
+				Edit comment
+			</h3>
+		</div>
+		<div>		
+    		<input id="comment" class="form-control" type="text" name="comment[text]" value="<%= comment.text %>">	
+		</div>
+		<button class="btn btn-lg btn-default btn-block btn-info">
+			Update
+		</button>
+		<a id="goBack" href="/forum/<%= question_id %>">Go Back</a>
+	</form>
+	
+	
+	
+	
+
+<% include ../partials/footer %>

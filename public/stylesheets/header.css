@@ -1,0 +1,19 @@
+/*Brand link*/
+.navbar-light .navbar-brand {
+	color: #2E5266;
+}
+
+.navbar-light .navbar-brand:hover {
+	color: #81D2C7;
+}
+
+
+/*Other links*/
+.navbar-light .navbar-nav .nav-link {
+	color: #2E5266;
+	cursor: pointer;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+	color: #81D2C7;
+}

@@ -1,0 +1,78 @@
+<% include ../partials/header %>
+
+<link rel="stylesheet" href="/stylesheets/show.css">
+<div class="container">
+	
+</div>
+
+<div class="container">
+	<div class="row">
+			<div class="rounded col-md-8 box">
+				<div class="d-flex justify-content-between">		
+					<div class="leftInfo">	
+						<h4>
+							<%= question.issue %>
+						</h4>
+						<div class="description">
+							<%= question.description %>
+						</div>
+						
+						
+						
+						<form action="/forum/<%= question._id %>/comments" method="POST">
+							
+							<div class="form-group" >
+								<input id="comment" class="form-control" type="text" name="comment[text]" placeholder="New comment">
+							</div>
+							<div>
+								<button class="btn btn-info" id="submitComment">
+								Submit
+							</button>
+							</div>
+							
+						</form>
+						
+						<div id="commentSection">
+							<% question.comments.forEach(function(comment) { %>
+							<hr>
+							<strong><%= comment.author.username %></strong>
+							<span class="pull-right">10 days ago</span>
+							<p>
+								<%= comment.text %>
+							</p>
+							<% if (currentUser && comment.author.id.equals(currentUser._id)){ %>
+									<a class="btn btn-sm" id="editButton" href="/forum/<%= question._id %>/comments/<%= comment._id%>/edit">
+										Edit
+									</a>
+									<form id="delete-form" action="/forum/<%= question._id %>/comments/<%= comment._id%>?_method=DELETE" method="POST">
+										<input type="submit" id="deleteButton" class="btn btn-sm" value="Delete">
+									</form>
+								<% } %>
+							<% }) %>
+						</div>
+					</div>
+					<div class="rightInfo">
+						<div>
+							<%= question.author.username %>
+						</div>
+						<div>
+							10 days
+						</div>
+					</div>	
+				</div>
+			</div>
+		<div class="col-md-4">
+			
+			<div>
+				<% question.issue %>
+			</div>
+		</div>	
+	</div>
+
+	<% var numberOfComments = question.comments.length %>
+	
+	<a href="/forum">Go Back</a>
+</div>
+
+
+<% include ../partials/footer %>
