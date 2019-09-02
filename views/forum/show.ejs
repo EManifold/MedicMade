@@ -6,69 +6,74 @@
 </div>
 
 <div class="container"> 
-	<div class="rounded box">
 	<div class="row">
-			<div class="rounded col-md-8">
-				<div class="d-flex justify-content-between">		
-					<div class="leftInfo">	
-						<h4>
-							<%= question.issue %>
-						</h4>
-						<div class="description">
-							<%= question.description %>
-						</div>
-						
-						
-						
-						<form action="/forum/<%= question._id %>/comments" method="POST">
+		
+		<div class="rounded box col-md-8">
+
+			<div class="rounded col-md-11" id="questionSection">
+					<div class="d-flex justify-content-between">		
+						<div class="leftInfo">	
+							<h4>
+								<%= question.issue %>
+							</h4>
+							<div class="description">
+								<%= question.description %>
+							</div>
 							
-							<div class="form-group" >
-								<input id="comment" class="form-control" type="text" name="comment[text]" placeholder="New comment">
+							
+							
+							
+							
+							
+						</div>
+						<div class="rightInfo">
+							<div>
+								<%= question.author.username %>
 							</div>
 							<div>
-								<button class="btn btn-info" id="submitComment">
-								Submit
-							</button>
+								10 days
 							</div>
-							
-						</form>
-						
-						
+						</div>	
 					</div>
-					<div class="rightInfo">
-						<div>
-							<%= question.author.username %>
-						</div>
-						<div>
-							10 days
-						</div>
-					</div>	
-				</div>
 			</div>
-		<div class="col-md-4">
 
-			
-			<div>
-				<% question.issue %>
-			</div>
-		</div>	
-		<div id="commentSection">
-				<% question.comments.forEach(function(comment) { %>
-				<hr>
-				<strong><%= comment.author.username %></strong>
-				<span class="pull-right">10 days ago</span>
-				<p>
-					<%= comment.text %>
-				</p>
-				<% if (currentUser && comment.author.id.equals(currentUser._id)){ %>
-						<a class="btn btn-sm" id="editButton" href="/forum/<%= question._id %>/comments/<%= comment._id%>/edit">
-							Edit
-						</a>
-						<form id="delete-form" action="/forum/<%= question._id %>/comments/<%= comment._id%>?_method=DELETE" method="POST">
-							<input type="submit" id="deleteButton" class="btn btn-sm" value="Delete">
-						</form>
-					<% } %>
-				<% }) %>
+			<div class="col-md-1" id="usernameSection">
+
+				
+				<div>
+					<% question.issue %>
+				</div>
+			</div>	
+
+			<div id="commentSection">
+
+				
+
+					<form action="/forum/<%= question._id %>/comments" method="POST">
+					<div class="input-group mb-3">
+							<input id="comment" class="form-control" type="text" name="comment[text]" placeholder="New comment..."  aria-label="New comment..." aria-describedby="basic-addon2">
+							<div class="input-group-append">
+							  <button class="input-group-text" id="basic-addon2">Submit</button>
+							</div>
+					 </div>
+					</form>
+
+					<% question.comments.forEach(function(comment) { %>
+					<hr>
+					<strong><%= comment.author.username %></strong>
+					<span class="pull-right">10 days ago</span>
+					<p>
+						<%= comment.text %>
+					</p>
+					<% if (currentUser && comment.author.id.equals(currentUser._id)){ %>
+							<a class="btn btn-sm" id="editButton" href="/forum/<%= question._id %>/comments/<%= comment._id%>/edit">
+								Edit
+							</a>
+							<form id="delete-form" action="/forum/<%= question._id %>/comments/<%= comment._id%>?_method=DELETE" method="POST">
+								<input type="submit" id="deleteButton" class="btn btn-sm" value="Delete">
+							</form>
+						<% } %>
+					<% }) %>
 			</div>
 	</div>
 </div>
