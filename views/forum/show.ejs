@@ -45,17 +45,17 @@
 				</div>
 			</div>	
 
-			<div id="commentSection">
+			<div id="commentSection" class="rounded">
 
 				
 
 					<form action="/forum/<%= question._id %>/comments" method="POST">
-					<div class="input-group mb-3">
-							<input id="comment" class="form-control" type="text" name="comment[text]" placeholder="New comment..."  aria-label="New comment..." aria-describedby="basic-addon2">
-							<div class="input-group-append">
-							  <button class="input-group-text" id="basic-addon2">Submit</button>
-							</div>
-					 </div>
+						<div class="input-group mb-3">
+								<input id="comment" class="form-control" type="text" name="comment[text]" placeholder="New comment..."  aria-label="New comment..." aria-describedby="basic-addon2">
+								<div class="input-group-append">
+								<button class="input-group-text" id="basic-addon2">Submit</button>
+								</div>
+						</div>
 					</form>
 
 					<% question.comments.forEach(function(comment) { %>
