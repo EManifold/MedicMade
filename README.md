@@ -1,12 +1,19 @@
-MedicMade website
+#MedicMade
 
 This project was created for a young startup called MedicMade, based in Bristol. They site is not yet being used but has the potential to be.
 
-MedicMade was started in order to tutor aspiring medical students, in preparation for university entrance tests and other related issues. The site incorporates a landing page, an unfinished about page, a pricing page, a blog page, and a forum.
+MedicMade was started in order to tutor aspiring medical students, in preparation for university entrance tests and then the degree itself. The site incorporates a landing page, a potential about page, a pricing page, a blog page, and a forum.
 
 The forum was the most complicated section to code, as it includes an authorisation system whereby the user has to be logged in to view questions, and edit and delete their own comments. Passport.js was used for this.
 
-The project uses HTML, CSS, Javascript, Node.js, and is styled using Bootstrap.
+Technology this project uses:
+- HTML
+- CSS
+- Javascript
+- Node.js
+- Express.js
+- Passport.js
+- Bootstrap
 
 Here are some examples of the pages that were created.
 
