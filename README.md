@@ -17,6 +17,10 @@ Technology this project uses:
 
 Here are some examples of the pages that were created.
 
+### Usage:
+Once cloned, to start run 'node app.js'
+Navigate to 'http://localhost:3000'
+
 ### Landing page    
 
 <img width="1266" alt="Screenshot 2019-09-09 at 16 17 14" src="https://user-images.githubusercontent.com/53044792/64543753-ac50ce80-d31d-11e9-9186-8d2af2a7d905.png">
