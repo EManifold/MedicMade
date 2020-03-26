@@ -22,7 +22,7 @@ app.use(methodOverride("_method"));
 //Connecting to mongodb
 mongoose
   .connect(
-    "mongodb+srv://EManifold:Pollyfrosty123@cluster0-lbblu.mongodb.net/medic_made?retryWrites=true&w=majority",
+    "mongodb+srv://EManifold:XXXX@cluster0-lbblu.mongodb.net/medic_made?retryWrites=true&w=majority",
     { useNewUrlParser: true, useCreateIndex: true }
   )
   .then(() => {
